@@ -17,33 +17,33 @@ import com.kuzonchen.model.TimetableDao;
 
 /**
  * {@inheritDoc}
- *
+ * 
  * @see de.greenrobot.dao.AbstractDaoSession
  */
 public class DaoSession extends AbstractDaoSession {
 
-	private final DaoConfig timetableDaoConfig;
+    private final DaoConfig timetableDaoConfig;
 
-	private final TimetableDao timetableDao;
+    private final TimetableDao timetableDao;
 
-	public DaoSession(SQLiteDatabase db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
-			daoConfigMap) {
-		super(db);
+    public DaoSession(SQLiteDatabase db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
+            daoConfigMap) {
+        super(db);
 
-		timetableDaoConfig = daoConfigMap.get(TimetableDao.class).clone();
-		timetableDaoConfig.initIdentityScope(type);
+        timetableDaoConfig = daoConfigMap.get(TimetableDao.class).clone();
+        timetableDaoConfig.initIdentityScope(type);
 
-		timetableDao = new TimetableDao(timetableDaoConfig, this);
+        timetableDao = new TimetableDao(timetableDaoConfig, this);
 
-		registerDao(Timetable.class, timetableDao);
-	}
+        registerDao(Timetable.class, timetableDao);
+    }
 
-	public void clear() {
-		timetableDaoConfig.getIdentityScope().clear();
-	}
+    public void clear() {
+        timetableDaoConfig.getIdentityScope().clear();
+    }
 
-	public TimetableDao getTimetableDao() {
-		return timetableDao;
-	}
+    public TimetableDao getTimetableDao() {
+        return timetableDao;
+    }
 
 }
