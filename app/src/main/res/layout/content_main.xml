@@ -21,7 +21,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/data"
+            android:id="@+id/editData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"/>
@@ -37,6 +37,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="click"
                 android:text="@string/btnInsert"/>
 
             <Button
@@ -44,21 +45,24 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btnDelete"/>
+                android:text="@string/btnDelete"
+                android:onClick="click" />
 
             <Button
                 android:id="@+id/btnUpdate"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btnUpdate"/>
+                android:text="@string/btnUpdate"
+                android:onClick="click" />
 
             <Button
                 android:id="@+id/btnSearch"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btnSearch"/>
+                android:text="@string/btnSearch"
+                android:onClick="click" />
         </LinearLayout>
 
         <ListView
